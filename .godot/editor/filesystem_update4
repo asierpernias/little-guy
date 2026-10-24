@@ -1,2 +1,4 @@
 res://scenes/main.tscn
 res://scenes/player.tscn
+res://scenes/player.gd
+res://scenes/character_body_2d.gd
