@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dwryd7tbgrbel"]
+
+[ext_resource type="Texture2D" uid="uid://dqowlaayr3kjv" path="res://assets/sprite-sheet.png" id="1_5reuo"]
+
+[node name="Security_camera" type="Node2D" unique_id=1475190332]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=109832189]
+position = Vector2(-7, 29)
+texture = ExtResource("1_5reuo")
+
+[node name="Detection_area" type="Area2D" parent="." unique_id=61046726]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Detection_area" unique_id=1416652638]
