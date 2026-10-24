@@ -1,0 +1,17 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1792838563
+::res://addons/::1792835756
+::res://addons/godot_super-wakatime/::1792835756
+api_key_prompt.tscn::PackedScene::3919262858641749045::1792835756::0::1::::<><><>0<>0<><>::
+counter.tscn::PackedScene::6849360014225833986::1792835756::0::1::::<><><>0<>0<><>::
+godot_super-wakatime.gd::GDScript::6277149880384411866::1792835756::0::1::::<>EditorPlugin<><>0<>1<><>::
+plugin.cfg::TextFile::-1::1792835756::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1792835756::0::1::::<><><>0<>0<><>::
+utils.gd::GDScript::5251015809120159908::1792835756::0::1::::<>RefCounted<><>0<>0<><>::
+::res://assets/::1792839368
+icon.svg::CompressedTexture2D::4728789316634806021::1792835355::1792835795::1::::<><><>0<>0<>2e020ae7475b6e0d147b80b9367c6e79<>res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex::
+sprite-sheet.png::CompressedTexture2D::8312540256532754527::1792839611::1792839613::1::::<><><>0<>0<>d902c80ef5de30ca970cdb5844c101f2<>res://.godot/imported/sprite-sheet.png-93dc3d984c8fa700b27070a175212ede.ctex::
+::res://scenes/::1792839534
+main.tscn::PackedScene::3324031485647043362::1792839534::0::1::::<><><>0<>0<><>::uid://dqowlaayr3kjv::::res://assets/sprite-sheet.png
+player.tscn::PackedScene::620733831930653987::1792839016::0::1::::<><><>0<>0<><>::uid://dqowlaayr3kjv::::res://assets/sprite-sheet.png
+::res://scripts/::1792835812
