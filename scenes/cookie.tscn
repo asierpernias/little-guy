@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8nqclv6y6vmm"]
+
+[ext_resource type="Script" uid="uid://b6pgh7eiewguc" path="res://scenes/area_2d.gd" id="1_i5c4t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_82po7"]
+radius = 24.020824
+
+[node name="Cookie" type="Node2D" unique_id=946515419]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1910838134]
+script = ExtResource("1_i5c4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=500911038]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_82po7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=968825991]
