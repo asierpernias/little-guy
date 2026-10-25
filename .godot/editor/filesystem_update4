@@ -2,3 +2,5 @@ res://scenes/main.tscn
 res://scenes/security_camera.gd
 res://scenes/security_camera.tscn
 res://scenes/camera.gd
+res://respawn.gd
+res://scenes/checkpoint.gd

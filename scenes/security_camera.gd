@@ -6,6 +6,10 @@ signal player_lost
 @export_group("Surveillance")
 @export var frame_duration: float = 1.0
 
+@export_group("Detection response")
+@export var respawn_on_detect: bool = true
+@export var respawn_color: Color = Color(0.7, 0.0, 0.0)
+
 @export_group("Position correction (sprite)")
 @export var frame_0_offset: Vector2 = Vector2.ZERO
 @export var frame_1_offset: Vector2 = Vector2.ZERO
@@ -32,6 +36,7 @@ var current_frame: int = 0
 var timer: float = 0.0
 var collision_base_position: Vector2 = Vector2.ZERO
 
+var player_body: Node2D
 var player_inside: bool = false
 var is_detected: bool = false
 
@@ -126,10 +131,10 @@ func refresh_detection() -> void:
 	is_detected = now_detected
 
 	if is_detected:
-		print("The camera has detected the player!")
 		player_detected.emit()
+		if respawn_on_detect and player_body != null:
+			Respawn.respawn_player(player_body, respawn_color)
 	else:
-		print("The camera has lost sight of the player.")
 		player_lost.emit()
 
 
@@ -141,6 +146,7 @@ func _is_player(body: Node2D) -> bool:
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if _is_player(body):
+		player_body = body
 		player_inside = true
 		refresh_detection()
 

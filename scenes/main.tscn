@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnmgkv0cklw0a"]
 
+[ext_resource type="Script" uid="uid://cfyvwwaq6blul" path="res://scenes/checkpoint.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://i3xnphtxlebj" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dwryd7tbgrbel" path="res://scenes/security_camera.tscn" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://cdlrpfv6qcusj" path="res://scenes/camera.gd" id="3_sugp2"]
@@ -8,6 +9,9 @@
 size = Vector2(1108, 26)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tmsv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82po7"]
+size = Vector2(25.5, 20)
 
 [node name="main" type="Node2D" unique_id=1244500291]
 
@@ -38,11 +42,19 @@ rotation = 1.5707964
 scale = Vector2(-896.03174, -184.09105)
 texture = SubResource("CanvasTexture_tmsv7")
 
+[node name="Checkpoint" type="Area2D" parent="Level" unique_id=2052593636]
+script = ExtResource("1_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Checkpoint" unique_id=1725024726]
+position = Vector2(465, 150)
+shape = SubResource("RectangleShape2D_82po7")
+debug_color = Color(0, 0, 0, 0.41960785)
+
 [node name="Security_camera" parent="." unique_id=1475190332 instance=ExtResource("2_sugp2")]
 position = Vector2(158, 126)
 
 [node name="player" parent="." unique_id=1194807777 groups=["player"] instance=ExtResource("1_o5qli")]
-position = Vector2(15, 116)
+position = Vector2(-42, 116)
 
 [node name="Camera" type="Camera2D" parent="player" unique_id=1331877594]
 position = Vector2(-15, -116)
