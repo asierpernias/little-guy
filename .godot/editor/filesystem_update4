@@ -1,3 +1,4 @@
 res://scenes/main.tscn
 res://scenes/security_camera.gd
 res://scenes/security_camera.tscn
+res://scenes/camera.gd
