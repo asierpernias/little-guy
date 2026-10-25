@@ -1,13 +1,70 @@
 [gd_scene format=3 uid="uid://dwryd7tbgrbel"]
 
 [ext_resource type="Texture2D" uid="uid://dqowlaayr3kjv" path="res://assets/sprite-sheet.png" id="1_5reuo"]
+[ext_resource type="Script" uid="uid://c705d7reo2q6p" path="res://scenes/security_camera.gd" id="1_7mono"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nogw0"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(2, 30, 94, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5a04"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(96, 30, 94, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bluxi"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(2, 121, 94, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2f63"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(96, 121, 94, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82po7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nogw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5a04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bluxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2f63")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Security_camera" type="Node2D" unique_id=1475190332]
+script = ExtResource("1_7mono")
+frame_1_offset = Vector2(-1, 0)
+frame_2_offset = Vector2(40, -5)
+frame_3_offset = Vector2(62.4, -6.1)
+collision_2_offset = Vector2(75, 0)
+collision_3_offset = Vector2(75, 0)
+detect_in_frame_0 = false
+detect_in_frame_1 = true
+detect_in_frame_2 = false
+detect_in_frame_3 = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=109832189]
-position = Vector2(-7, 29)
-texture = ExtResource("1_5reuo")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1279726355]
+position = Vector2(-35.98626, 17.375002)
+scale = Vector2(0.9148352, 0.91483516)
+sprite_frames = SubResource("SpriteFrames_82po7")
+frame = 1
+frame_progress = 0.0071681538
 
-[node name="Detection_area" type="Area2D" parent="." unique_id=61046726]
+[node name="DetectionArea" type="Area2D" parent="." unique_id=61046726]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Detection_area" unique_id=1416652638]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="DetectionArea" unique_id=1416652638]
+position = Vector2(15, -15)
+scale = Vector2(2.375, 0.71875)
+polygon = PackedVector2Array(-13.052631, 49.3913, -18.105263, 52.173912, -21.894735, 56.347824, -21.894735, 61.913044, -19.789473, 63.304348, -17.263157, 66.08695, -12.631578, 68.86956, -5.0526314, 68.86956, 0, 66.78261, 2.5263152, 63.304348, 4.2105255, 59.13043, 2.9473677, 54.95652, 0.42105198, 52.173912, -6.736842, 49.3913)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_shape_exited" from="DetectionArea" to="." method="_on_detection_area_body_shape_exited"]

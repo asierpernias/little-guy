@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dwryd7tbgrbel"]
+
+[ext_resource type="Texture2D" uid="uid://dqowlaayr3kjv" path="res://assets/sprite-sheet.png" id="1_5reuo"]
+[ext_resource type="Script" uid="uid://c705d7reo2q6p" path="res://scenes/security_camera.gd" id="1_7mono"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nogw0"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(2, 30, 94, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5a04"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(96, 30, 94, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bluxi"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(2, 121, 94, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2f63"]
+atlas = ExtResource("1_5reuo")
+region = Rect2(96, 121, 94, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82po7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nogw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5a04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bluxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2f63")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Security_camera" type="Node2D" unique_id=1475190332]
+script = ExtResource("1_7mono")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1279726355]
+position = Vector2(-32, 22)
+sprite_frames = SubResource("SpriteFrames_82po7")
+
+[node name="Detection_area" type="Area2D" parent="." unique_id=61046726]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Detection_area" unique_id=1416652638]

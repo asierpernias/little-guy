@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bnmgkv0cklw0a"]
 
 [ext_resource type="PackedScene" uid="uid://i3xnphtxlebj" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dwryd7tbgrbel" path="res://scenes/security_camera.tscn" id="2_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fwtu"]
-size = Vector2(321, 26)
+size = Vector2(525, 26)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tmsv7"]
 
@@ -17,13 +18,16 @@ position = Vector2(0, -2)
 [node name="Ground" type="StaticBody2D" parent="Level" unique_id=1764621643]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ground" unique_id=1928022194]
-position = Vector2(161.5, 166)
+position = Vector2(263.5, 166)
 shape = SubResource("RectangleShape2D_5fwtu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/Ground" unique_id=1948012048]
-position = Vector2(155, 166)
-scale = Vector2(-503.4545, -29.371048)
+position = Vector2(263.28864, 166)
+scale = Vector2(-720.03174, -29.371048)
 texture = SubResource("CanvasTexture_tmsv7")
+
+[node name="Security_camera" parent="." unique_id=1475190332 instance=ExtResource("2_sugp2")]
+position = Vector2(158, 126)
 
 [node name="player" parent="." unique_id=1194807777 instance=ExtResource("1_o5qli")]
 position = Vector2(15, 116)
